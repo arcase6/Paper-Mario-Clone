@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ca0c34d90f1726349a044d104c05b92e, type: 3}
+  m_Name: Honey Syrup
+  m_EditorClassIdentifier: 
+  Icon: {fileID: 4848573571968539624, guid: 5f8466a86de1b6049987aeec5ba2f3a8, type: 3}
+  AttackCostType: 0
+  AttackCost: 0
+  TargetType: 1
+  BuffType: 1
+  BuffAmmount: 5
+  AnimationRemappings: []
+  ActivationLocationName: Forward

@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 793bc99422e67ec40922b1d5f004f16c, type: 3}
+  m_Name: Tattle
+  m_EditorClassIdentifier: 
+  Icon: {fileID: 21300000, guid: 4640b1adf22844745b3952994f880a01, type: 3}
+  AttackCostType: 0
+  AttackCost: 0
+  TargetType: 16

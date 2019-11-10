@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ca0c34d90f1726349a044d104c05b92e, type: 3}
+  m_Name: Ultra Shroom
+  m_EditorClassIdentifier: 
+  Icon: {fileID: 21300000, guid: 56b81de4a75188d40a0160fe3cbe1085, type: 3}
+  AttackCostType: 0
+  AttackCost: 0
+  TargetType: 1
+  BuffType: 0
+  BuffAmmount: 50
+  ActivationLocationName: Forward

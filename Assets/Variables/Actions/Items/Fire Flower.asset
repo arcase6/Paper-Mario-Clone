@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ca0c34d90f1726349a044d104c05b92e, type: 3}
+  m_Name: Fire Flower
+  m_EditorClassIdentifier: 
+  Icon: {fileID: 21300000, guid: 1d808587c732b5a468ef403910ce61cd, type: 3}
+  AttackCostType: 0
+  AttackCost: 0
+  TargetType: 18
+  BuffType: 0
+  BuffAmmount: -3
+  AnimationRemappings: []
+  ActivationLocationName: Forward
+  PrefabToSpawn: {fileID: 4828771718813441390, guid: 11348054d81fed24db56d99022652f4f,
+    type: 3}
