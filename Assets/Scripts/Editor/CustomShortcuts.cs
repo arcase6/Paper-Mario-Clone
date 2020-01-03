@@ -13,6 +13,20 @@ public class CustomShortcuts : EditorWindow {
             }
         }
     }
+    
+    [MenuItem("GameObject/Change Layout 1 &1")]
+    private static void SwitchLayout1() {
+        EditorApplication.ExecuteMenuItem("Window/Layouts/Default");
+    }
 
+    [MenuItem("GameObject/Change Layout 2 &2")]
+    private static void SwitchLayout2() {
+        EditorApplication.ExecuteMenuItem("Window/Layouts/2 by 3");
+    }
+
+    [MenuItem("GameObject/Change Layout 3 &3")]
+    private static void SwitchLayout3() {
+        EditorApplication.ExecuteMenuItem("Window/Layouts/Animation");
+    }
     
 }

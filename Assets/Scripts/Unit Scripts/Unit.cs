@@ -225,9 +225,11 @@ public abstract class Unit : MonoBehaviour, IStateChangeEventReceiver
             distanceRemaining = Vector3.Magnitude(difference);
 
             float speed = WalkSpeed; //to-do: make acceleration for smoother movement
-            float velocity = speed * (Vector3.Dot(directionVector, transform.forward) >= 0 ? 1 : -1); //check the direction
-            this.Animator.SetFloat("VelocityNormalized", velocity / WalkSpeed);
-
+            float direction = (Vector3.Dot(directionVector, transform.forward) >= 0 ? 1 : 0); //check the direction
+            float velocity = WalkSpeed;
+            this.Animator.SetFloat("VelocityNormalized", 1);
+            this.Animator.SetFloat("TurnOrientation", direction);
+            
             //move towards end
             Vector3 offset = directionVector * (speed * Time.deltaTime);
             if (distanceRemaining < Vector3.Magnitude(offset)){
