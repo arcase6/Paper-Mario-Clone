@@ -45,6 +45,7 @@ SpriteRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -125,6 +126,7 @@ SpriteRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -205,6 +207,7 @@ SpriteRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -381,6 +384,7 @@ SpriteMask:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -677,8 +681,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4217547972651732035}
-  - component: {fileID: 1191198708625839925}
-  - component: {fileID: 819805593686949027}
   m_Layer: 10
   m_Name: Renderer
   m_TagString: Untagged
@@ -694,58 +696,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5514695269643875889}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: -1.01, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 2519568427193540793}
   m_Father: {fileID: 1916150485268881801}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!33 &1191198708625839925
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5514695269643875889}
-  m_Mesh: {fileID: 10208, guid: 0000000000000000e000000000000000, type: 0}
---- !u!23 &819805593686949027
-MeshRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5514695269643875889}
-  m_Enabled: 1
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_DynamicOccludee: 1
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_RenderingLayerMask: 1
-  m_RendererPriority: 0
-  m_Materials:
-  - {fileID: 2100000, guid: ecf0dff244dcfa244a2b99944800fc80, type: 2}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_ReceiveGI: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 1
-  m_SelectedEditorRenderState: 3
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
 --- !u!1 &5779793928240273013
 GameObject:
   m_ObjectHideFlags: 0
@@ -836,6 +793,7 @@ SpriteRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -996,6 +954,7 @@ SpriteRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -1329,6 +1288,82 @@ MonoBehaviour:
     OnTextChanged:
       m_PersistentCalls:
         m_Calls: []
+--- !u!1001 &7841979632666864828
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 4217547972651732035}
+    m_Modifications:
+    - target: {fileID: -3593027185316869115, guid: 7d3292f79989f1e49aac86f2e2450ad9,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -3593027185316869115, guid: 7d3292f79989f1e49aac86f2e2450ad9,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -3593027185316869115, guid: 7d3292f79989f1e49aac86f2e2450ad9,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -3593027185316869115, guid: 7d3292f79989f1e49aac86f2e2450ad9,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -3593027185316869115, guid: 7d3292f79989f1e49aac86f2e2450ad9,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -3593027185316869115, guid: 7d3292f79989f1e49aac86f2e2450ad9,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -3593027185316869115, guid: 7d3292f79989f1e49aac86f2e2450ad9,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -3593027185316869115, guid: 7d3292f79989f1e49aac86f2e2450ad9,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -3593027185316869115, guid: 7d3292f79989f1e49aac86f2e2450ad9,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -3593027185316869115, guid: 7d3292f79989f1e49aac86f2e2450ad9,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -3593027185316869115, guid: 7d3292f79989f1e49aac86f2e2450ad9,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8298714248850979874, guid: 7d3292f79989f1e49aac86f2e2450ad9,
+        type: 3}
+      propertyPath: m_Name
+      value: VectorGoomba
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 7214310373459985394, guid: 7d3292f79989f1e49aac86f2e2450ad9,
+    type: 3}
+--- !u!4 &2519568427193540793 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -3593027185316869115, guid: 7d3292f79989f1e49aac86f2e2450ad9,
+    type: 3}
+  m_PrefabInstance: {fileID: 7841979632666864828}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &8082547411645331728
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1336,20 +1371,25 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 7340396284942880849}
     m_Modifications:
-    - target: {fileID: 6518407060458884927, guid: d9e6a27e80671254daea19046ed83625,
+    - target: {fileID: 3131927486419957089, guid: d9e6a27e80671254daea19046ed83625,
         type: 3}
-      propertyPath: m_Name
-      value: Healing Heart
-      objectReference: {fileID: 0}
-    - target: {fileID: 6518407060458884927, guid: d9e6a27e80671254daea19046ed83625,
-        type: 3}
-      propertyPath: m_IsActive
+      propertyPath: m_textInfo.characterCount
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6518407060458884927, guid: d9e6a27e80671254daea19046ed83625,
+    - target: {fileID: 3131927486419957089, guid: d9e6a27e80671254daea19046ed83625,
         type: 3}
-      propertyPath: m_Layer
-      value: 10
+      propertyPath: m_textInfo.wordCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3131927486419957089, guid: d9e6a27e80671254daea19046ed83625,
+        type: 3}
+      propertyPath: m_textInfo.lineCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3131927486419957089, guid: d9e6a27e80671254daea19046ed83625,
+        type: 3}
+      propertyPath: m_textInfo.pageCount
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5008060603149513617, guid: d9e6a27e80671254daea19046ed83625,
         type: 3}
@@ -1416,30 +1456,25 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 10
       objectReference: {fileID: 0}
-    - target: {fileID: 9182211390430657774, guid: d9e6a27e80671254daea19046ed83625,
+    - target: {fileID: 6518407060458884927, guid: d9e6a27e80671254daea19046ed83625,
+        type: 3}
+      propertyPath: m_Name
+      value: Healing Heart
+      objectReference: {fileID: 0}
+    - target: {fileID: 6518407060458884927, guid: d9e6a27e80671254daea19046ed83625,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6518407060458884927, guid: d9e6a27e80671254daea19046ed83625,
         type: 3}
       propertyPath: m_Layer
       value: 10
       objectReference: {fileID: 0}
-    - target: {fileID: 3131927486419957089, guid: d9e6a27e80671254daea19046ed83625,
+    - target: {fileID: 9182211390430657774, guid: d9e6a27e80671254daea19046ed83625,
         type: 3}
-      propertyPath: m_textInfo.characterCount
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3131927486419957089, guid: d9e6a27e80671254daea19046ed83625,
-        type: 3}
-      propertyPath: m_textInfo.wordCount
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3131927486419957089, guid: d9e6a27e80671254daea19046ed83625,
-        type: 3}
-      propertyPath: m_textInfo.lineCount
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3131927486419957089, guid: d9e6a27e80671254daea19046ed83625,
-        type: 3}
-      propertyPath: m_textInfo.pageCount
-      value: 0
+      propertyPath: m_Layer
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d9e6a27e80671254daea19046ed83625, type: 3}
@@ -1456,16 +1491,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8738672155767431623}
     m_Modifications:
-    - target: {fileID: 2286882956598097326, guid: a54274b50674a5a44a141d8b05cc8b62,
-        type: 3}
-      propertyPath: m_Name
-      value: Healing Flower
-      objectReference: {fileID: 0}
-    - target: {fileID: 2286882956598097326, guid: a54274b50674a5a44a141d8b05cc8b62,
-        type: 3}
-      propertyPath: m_Layer
-      value: 10
-      objectReference: {fileID: 0}
     - target: {fileID: 21004883083299072, guid: a54274b50674a5a44a141d8b05cc8b62,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1522,6 +1547,16 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2081017391303187513, guid: a54274b50674a5a44a141d8b05cc8b62,
+        type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 2286882956598097326, guid: a54274b50674a5a44a141d8b05cc8b62,
+        type: 3}
+      propertyPath: m_Name
+      value: Healing Flower
+      objectReference: {fileID: 0}
+    - target: {fileID: 2286882956598097326, guid: a54274b50674a5a44a141d8b05cc8b62,
         type: 3}
       propertyPath: m_Layer
       value: 10
