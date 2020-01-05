@@ -31,7 +31,7 @@ ScriptedImporter:
     spriteMeshType: 1
     alignment: 0
     spritePivot: {x: 0.5, y: 0.5}
-    spritePixelsToUnits: 900
+    spritePixelsToUnits: 800
     spriteBorder: {x: 0, y: 0, z: 0, w: 0}
     spriteGenerateFallbackPhysicsShape: 0
     generateCubemap: 6
@@ -101,19 +101,19 @@ ScriptedImporter:
     internalID: 0
     spriteBone:
     - name: Right Eyebrow 3
-      position: {x: 103.70468, y: 0.00002173631, z: 0}
-      rotation: {x: 0, y: 0, z: -0.15148036, w: 0.9884603}
-      length: 122.05712
+      position: {x: 103.70519, y: -0.000035734476, z: 0}
+      rotation: {x: 0, y: 0, z: -0.15148006, w: 0.9884603}
+      length: 122.05714
       parentId: 1
     - name: Right Eyebrow 2
-      position: {x: 113.44777, y: 0.00003138771, z: 0}
-      rotation: {x: 0, y: 0, z: -0.15316138, w: 0.98820126}
-      length: 103.70493
+      position: {x: 113.447556, y: 0.00007194291, z: 0}
+      rotation: {x: 0, y: 0, z: -0.15316181, w: 0.98820114}
+      length: 103.70495
       parentId: 2
     - name: Right Eyebrow 1
       position: {x: 37.51758, y: 242.255, z: 0}
-      rotation: {x: 0, y: 0, z: -0.15056176, w: 0.9886006}
-      length: 113.44779
+      rotation: {x: 0, y: 0, z: -0.15056165, w: 0.9886007}
+      length: 113.4478
       parentId: -1
     spriteOutline: []
     vertices:
@@ -823,14 +823,14 @@ ScriptedImporter:
     internalID: 0
     spriteBone:
     - name: Left Eyebrow3
-      position: {x: 106.287964, y: 0.000013491813, z: 0}
-      rotation: {x: 0, y: 0, z: -0.15467986, w: -0.98796463}
+      position: {x: 106.28777, y: 0.000116480944, z: 0}
+      rotation: {x: 0, y: 0, z: -0.15468013, w: -0.9879647}
       length: 116.60172
       parentId: 1
     - name: Left Eyebrow2
       position: {x: 109.49406, y: -0.00006312726, z: 0}
-      rotation: {x: 0, y: 0, z: 0.07526136, w: 0.99716383}
-      length: 106.28814
+      rotation: {x: 0, y: 0, z: 0.07526112, w: 0.99716383}
+      length: 106.28807
       parentId: 2
     - name: Left Eyebrow1
       position: {x: 289.0652, y: 246.0528, z: 0}
@@ -2926,19 +2926,19 @@ ScriptedImporter:
     internalID: 0
     spriteBone:
     - name: Lower Mouth1_23
-      position: {x: 160.91634, y: 0.000043242744, z: 0}
-      rotation: {x: 0, y: 0, z: -0.092035875, w: 0.99575573}
-      length: 170.04208
+      position: {x: 160.91632, y: 0.000063940286, z: 0}
+      rotation: {x: 0, y: 0, z: -0.092035934, w: 0.99575573}
+      length: 170.0421
       parentId: 1
     - name: Lower Mouth1_22
-      position: {x: 183.98985, y: 0.00012145731, z: 0}
-      rotation: {x: 0, y: 0, z: -0.104600556, w: 0.9945143}
-      length: 160.91629
+      position: {x: 183.9899, y: -0.00002706649, z: 0}
+      rotation: {x: 0, y: 0, z: -0.10460067, w: 0.9945143}
+      length: 160.91632
       parentId: 2
     - name: Lower Mouth1_21
       position: {x: 211.83461, y: 21.749659, z: 0}
-      rotation: {x: 0, y: 0, z: -0.97967833, w: 0.20057511}
-      length: 183.98987
+      rotation: {x: 0, y: 0, z: -0.97967833, w: 0.2005753}
+      length: 183.98993
       parentId: 3
     - name: Lower Mouth1
       position: {x: 218.70758, y: 10.264954, z: 0}
@@ -3878,9 +3878,9 @@ ScriptedImporter:
     internalID: 0
     spriteBone:
     - name: Right Tooth
-      position: {x: 86.76196, y: 19.029907, z: 0}
-      rotation: {x: 0, y: 0, z: 0.786051, w: 0.61816174}
-      length: 39.151905
+      position: {x: 86.76196, y: 19.03003, z: 0}
+      rotation: {x: 0, y: 0, z: 0.78605115, w: 0.6181615}
+      length: 39.15192
       parentId: -1
     spriteOutline: []
     vertices:
@@ -4191,9 +4191,9 @@ ScriptedImporter:
     internalID: 0
     spriteBone:
     - name: Left Tooth
-      position: {x: 35.38855, y: 21.838501, z: 0}
-      rotation: {x: 0, y: 0, z: 0.5203013, w: 0.8539828}
-      length: 42.87992
+      position: {x: 35.38867, y: 21.83844, z: 0}
+      rotation: {x: 0, y: 0, z: 0.52030134, w: 0.85398275}
+      length: 42.879932
       parentId: -1
     spriteOutline: []
     vertices:
@@ -4493,33 +4493,33 @@ ScriptedImporter:
     internalID: 0
     spriteBone:
     - name: Mouth RIght_28
-      position: {x: 90.24407, y: 0.000067491594, z: 0}
-      rotation: {x: 0, y: 0, z: -0.26797017, w: 0.9634272}
-      length: 66.61027
+      position: {x: 90.244095, y: 0.00018789695, z: 0}
+      rotation: {x: 0, y: 0, z: -0.26797023, w: 0.9634272}
+      length: 66.610275
       parentId: 1
     - name: Mouth RIght_27
-      position: {x: 97.23849, y: 0.00002249842, z: 0}
-      rotation: {x: 0, y: 0, z: -0.15455706, w: 0.9879839}
-      length: 90.24401
+      position: {x: 97.23851, y: -0.00014779618, z: 0}
+      rotation: {x: 0, y: 0, z: -0.15455678, w: 0.98798394}
+      length: 90.24402
       parentId: 2
     - name: Mouth RIght_26
-      position: {x: 94.450134, y: 0.000047015863, z: 0}
-      rotation: {x: 0, y: 0, z: -0.09891435, w: 0.995096}
-      length: 97.23852
+      position: {x: 94.44999, y: -0.000023220864, z: 0}
+      rotation: {x: 0, y: 0, z: -0.09891445, w: 0.995096}
+      length: 97.23854
       parentId: 3
     - name: Mouth RIght_25
-      position: {x: 88.077156, y: 0.00003381372, z: 0}
-      rotation: {x: 0, y: 0, z: -0.15574177, w: 0.98779786}
-      length: 94.45009
+      position: {x: 88.07738, y: 0.000032669224, z: 0}
+      rotation: {x: 0, y: 0, z: -0.15574178, w: 0.9877978}
+      length: 94.450066
       parentId: 4
     - name: Mouth RIght_24
-      position: {x: 51.14735, y: -0.00010822212, z: 0}
-      rotation: {x: 0, y: 0, z: -0.25083962, w: 0.96802866}
-      length: 88.077156
+      position: {x: 51.147404, y: -0.00006133369, z: 0}
+      rotation: {x: 0, y: 0, z: -0.2508393, w: 0.9680288}
+      length: 88.07714
       parentId: 5
     - name: Mouth RIght
       position: {x: 183.74257, y: -209.45415, z: 0}
-      rotation: {x: 0, y: 0, z: 0.96005005, w: 0.27982846}
+      rotation: {x: 0, y: 0, z: 0.96005, w: 0.27982882}
       length: 51.147415
       parentId: 6
     - name: Upper Mouth 1
@@ -8492,7 +8492,11 @@ ScriptedImporter:
   paperDollMode: 0
   keepDupilcateSpriteName: 0
   spriteCategoryList:
-    categories: []
+    categories:
+    - name: Right Eyebrow
+      labels:
+      - name: Right Eyebrow
+        spriteId: 5a395efd0622cb148b4b3b96a127ec63
   textureActualWidth: 2048
   textureActualHeight: 2048
   spritePackingTag: 
@@ -8634,17 +8638,17 @@ ScriptedImporter:
       parentId: 1
     - name: Right Eyebrow 1
       position: {x: 550.9368, y: 40.11822, z: 0}
-      rotation: {x: 0, y: -0, z: -0.7396302, w: 0.6730135}
-      length: 113.44776
+      rotation: {x: 0, y: -0, z: -0.73963016, w: 0.6730136}
+      length: 113.44777
       parentId: 4
     - name: Right Eyebrow 2
-      position: {x: 113.44778, y: 0.00004562775, z: 0}
-      rotation: {x: 0, y: 0, z: -0.15316133, w: 0.9882012}
+      position: {x: 113.44776, y: 0.0000049692053, z: 0}
+      rotation: {x: 0, y: 0, z: -0.15316181, w: 0.98820114}
       length: 103.70491
       parentId: 5
     - name: Right Eyebrow 3
-      position: {x: 103.70493, y: -0.000063133004, z: 0}
-      rotation: {x: 0, y: 0, z: -0.1514804, w: 0.9884603}
+      position: {x: 103.70494, y: -0.00002518101, z: 0}
+      rotation: {x: 0, y: 0, z: -0.15148008, w: 0.9884603}
       length: 122.05709
       parentId: 6
     - name: Left Eyebrow1
@@ -8654,12 +8658,12 @@ ScriptedImporter:
       parentId: 4
     - name: Left Eyebrow2
       position: {x: 109.49388, y: 0.000012227005, z: 0}
-      rotation: {x: 0, y: 0, z: 0.07526128, w: 0.9971639}
-      length: 106.28813
+      rotation: {x: 0, y: 0, z: 0.07526108, w: 0.9971639}
+      length: 106.288055
       parentId: 8
     - name: Left Eyebrow3
-      position: {x: 106.28806, y: -0.00003502197, z: 0}
-      rotation: {x: 0, y: 0, z: -0.15467991, w: -0.9879647}
+      position: {x: 106.28811, y: 0.000005133352, z: 0}
+      rotation: {x: 0, y: 0, z: -0.15468013, w: -0.98796463}
       length: 116.60172
       parentId: 9
     - name: bone_12
@@ -8684,22 +8688,22 @@ ScriptedImporter:
       parentId: 4
     - name: Mouth RIght
       position: {x: 183.74254, y: -209.45416, z: 0}
-      rotation: {x: 0, y: -0, z: 0.96005005, w: 0.2798285}
-      length: 51.14739
+      rotation: {x: 0, y: -0, z: 0.9600499, w: 0.27982882}
+      length: 51.147408
       parentId: 14
     - name: Lower Mouth1_21
       position: {x: 211.83461, y: 21.749617, z: 0}
-      rotation: {x: 0, y: -0, z: -0.97967833, w: 0.20057508}
-      length: 183.98988
+      rotation: {x: 0, y: -0, z: -0.97967833, w: 0.20057532}
+      length: 183.98987
       parentId: 13
     - name: Lower Mouth1_22
-      position: {x: 183.9899, y: 0.00007111632, z: 0}
-      rotation: {x: 0, y: 0, z: -0.10460052, w: 0.99451435}
-      length: 160.91626
+      position: {x: 183.98987, y: -0.000021891541, z: 0}
+      rotation: {x: 0, y: 0, z: -0.10460067, w: 0.99451435}
+      length: 160.91629
       parentId: 16
     - name: Lower Mouth1_23
-      position: {x: 160.91629, y: -0.0000004590995, z: 0}
-      rotation: {x: 0, y: 0, z: -0.0920359, w: 0.99575573}
+      position: {x: 160.91632, y: -0.000032479773, z: 0}
+      rotation: {x: 0, y: 0, z: -0.092035934, w: 0.9957557}
       length: 170.04205
       parentId: 17
     - name: Right Tooth
@@ -8713,28 +8717,28 @@ ScriptedImporter:
       length: 42.87991
       parentId: 18
     - name: Mouth RIght_24
-      position: {x: 51.14741, y: -0.000026701402, z: 0}
-      rotation: {x: 0, y: 0, z: -0.25083965, w: 0.96802866}
+      position: {x: 51.14737, y: 0.000016270453, z: 0}
+      rotation: {x: 0, y: 0, z: -0.2508393, w: 0.9680288}
       length: 88.07714
       parentId: 15
     - name: Mouth RIght_25
-      position: {x: 88.077156, y: 0.000002325427, z: 0}
+      position: {x: 88.07719, y: 0.000032413198, z: 0}
       rotation: {x: 0, y: 0, z: -0.15574172, w: 0.9877978}
-      length: 94.450066
+      length: 94.45006
       parentId: 21
     - name: Mouth RIght_26
-      position: {x: 94.45007, y: 0.000005677085, z: 0}
-      rotation: {x: 0, y: 0, z: -0.09891433, w: 0.99509597}
-      length: 97.2385
+      position: {x: 94.45009, y: 0.0000028500635, z: 0}
+      rotation: {x: 0, y: 0, z: -0.09891447, w: 0.99509597}
+      length: 97.23851
       parentId: 22
     - name: Mouth RIght_27
-      position: {x: 97.23851, y: -0.000022368184, z: 0}
-      rotation: {x: 0, y: 0, z: -0.15455712, w: 0.9879839}
-      length: 90.244
+      position: {x: 97.238495, y: -0.000036602534, z: 0}
+      rotation: {x: 0, y: 0, z: -0.15455694, w: 0.9879839}
+      length: 90.243996
       parentId: 23
     - name: Mouth RIght_28
-      position: {x: 90.24399, y: 0.000006711458, z: 0}
-      rotation: {x: 0, y: 0, z: -0.26797017, w: 0.96342725}
+      position: {x: 90.24402, y: -0.0000029267503, z: 0}
+      rotation: {x: 0, y: 0, z: -0.26797026, w: 0.96342725}
       length: 66.61026
       parentId: 24
     parts:
