@@ -24,10 +24,16 @@ public class Enemy : Unit
     }
 
     public override void BeginTurn(){
+        base.BeginTurn();
         this.Brain.PerformTurn();
     }
 
     public override void EndTurn(){
+        this.CanAct = false;
+
+        //the unit set is just a monobehavior that has a reference to the set
+        //this is how we notify the turn manager (turn manager has one set for players and one for enemies)
+        OrientationController.Orientation = startingOrientation;
         foreach(UnitSetHolder holder in UnitSet.Holders){
             holder.OnUnitEndTurn.Invoke(this);
         }

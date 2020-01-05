@@ -69,6 +69,7 @@ public abstract class Unit : MonoBehaviour
     public int AttackBonus = 0;
     public int DefenseBonus = 0;
     public float WalkSpeed = 8;
+    protected OrientCharacter OrientationController;
     public Animator Animator;
     public Transform HealingHeart;
     public Transform DamageBubble;
@@ -117,6 +118,7 @@ public abstract class Unit : MonoBehaviour
         overrideController.GetOverrides(animationClipOverrides);
         HeartText = HealingHeart?.GetComponentInChildren<StringMediator>();
         DamageText = DamageBubble?.GetComponentInChildren<StringMediator>();
+        OrientationController = GetComponent<OrientCharacter>();
     }
 
     /// <summary>
@@ -147,7 +149,19 @@ public abstract class Unit : MonoBehaviour
     }
 
 
-    public abstract void BeginTurn();
+    protected Orientation startingOrientation;
+    public virtual void BeginTurn(){
+        startingOrientation = OrientationController.Orientation;
+    }
+
+    public virtual void EndTurn(){
+        this.CanAct = false;
+
+        //the unit set is just a monobehavior that has a reference to the set
+        //this is how we notify the turn manager (turn manager has one set for players and one for enemies)
+        OrientationController.Orientation = startingOrientation;
+        this.UnitSet.NotifyTurnEnded(this);
+    }
 
     public Transform GetSiblingTransform(string transformName)
     {
@@ -210,18 +224,19 @@ public abstract class Unit : MonoBehaviour
         //approach goal
         goal.y = transform.position.y;
         float distanceRemaining = 0;
+        Vector3 difference = goal- transform.position;
+        this.OrientationController.Orientation = Vector3.Dot(Camera.main.transform.right,difference) >= 0 ? Orientation.right : Orientation.left;
+
         do
         {
+            difference = goal - transform.position;
             //calculate ammount to go
-            Vector3 difference = goal- transform.position;
             Vector3 directionVector = Vector3.Normalize(difference);
             distanceRemaining = Vector3.Magnitude(difference);
 
             float speed = WalkSpeed; //to-do: make acceleration for smoother movement
-            float direction = (Vector3.Dot(directionVector, transform.forward) >= 0 ? 1 : 0); //check the direction
             float velocity = WalkSpeed;
             this.Animator.SetFloat("VelocityNormalized", 1);
-            this.Animator.SetFloat("TurnOrientation", direction);
             
             //move towards end
             Vector3 offset = directionVector * (speed * Time.deltaTime);
@@ -392,10 +407,6 @@ public abstract class Unit : MonoBehaviour
     {
         return (HealingHeart && HealingHeart.gameObject.activeInHierarchy) || EffectSpawner.enabled;
     }
-
-    //called when the Unit finishes a move
-    //used to end the turn and whatever else needs to be done
-    public abstract void EndTurn();
 
     protected virtual void OnEnable()
     {

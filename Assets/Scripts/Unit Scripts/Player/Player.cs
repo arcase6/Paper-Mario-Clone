@@ -57,17 +57,8 @@ public class Player : Unit
     }
 
     #region Unit abstract methods
-    public override void BeginTurn(){
-        
-    }
 
-    public override void EndTurn(){
-        this.CanAct = false;
-
-        //the unit set is just a monobehavior that has a reference to the set
-        //this is how we notify the turn manager (turn manager has one set for players and one for enemies)
-        this.UnitSet.NotifyTurnEnded(this);
-    }
+    
 
 #endregion
     
@@ -93,6 +84,7 @@ public class Player : Unit
             rotatorMenuRef.Hide(); //the swap action will call show when the animation finishes
         rotatorMenuRef.DynamicallyLoadedActions = otherUnit.MenuActions;
         rotatorMenuRef.ActingUnitRef.Value = otherUnit;
+        otherUnit.BeginTurn();
         stageDirector.Swap();
         return true;
             
