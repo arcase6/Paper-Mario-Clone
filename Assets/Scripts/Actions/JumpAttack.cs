@@ -67,8 +67,7 @@ public class JumpAttack : BasicAttack
             float impactTime = Time.time;
 
             //play the impact animation and freeze the position
-            ActingUnit.Animator.SetTrigger("Impact");
-            ActingUnit.WaitForStateExit("JumpImpact", () =>
+            ActingUnit.SetTriggerAndTriggerCallbackOnReenter("Impact", () =>
             {
                 ActionData.ApplyDamage(ActingUnit ,targetUnits[targetIndex],this.BaseAttackDamage);
 

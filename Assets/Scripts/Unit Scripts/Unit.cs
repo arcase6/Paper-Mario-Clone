@@ -28,7 +28,7 @@ public enum UnitType
     Ally
 }
 
-public abstract class Unit : MonoBehaviour, IStateChangeEventReceiver
+public abstract class Unit : MonoBehaviour
 {
     public bool CanAct;
     public UnitRuntimeSet UnitSet;
@@ -83,41 +83,6 @@ public abstract class Unit : MonoBehaviour, IStateChangeEventReceiver
     private AnimatorOverrideController overrideController;
 
     private Action RegisteredTriggerCallback;
-    private Tuple<string,Action> RegisteredStateExitCallback;
-
-
-    public void OnStateEnter(AnimatorStateInfo state)
-    {
-
-    }
-
-    public void OnStateExit(AnimatorStateInfo state)
-    {
-        if (this.RegisteredStateExitCallback != null && (RegisteredStateExitCallback.Item1 == "" || state.IsName(RegisteredStateExitCallback.Item1)))
-        {
-            var localRef = this.RegisteredStateExitCallback.Item2;
-            RegisteredStateExitCallback = null;
-            localRef();
-        }
-    }
-
-    public void WaitForStateExit( string StateName,Action callback)
-    {
-        if (RegisteredStateExitCallback != null)
-        {
-            Debug.Log("Warning - A callback was registered, but a previous callback was there. Overriding " + callback.Method.Name);
-        }
-        this.RegisteredStateExitCallback = new Tuple<string, Action>(StateName,callback);
-    }
-
-    public void WaitForStateExit( Action callback)
-    {
-        if (RegisteredStateExitCallback != null)
-        {
-            Debug.Log("Warning - A callback was registered, but a previous callback was there. Overriding " + callback.Method.Name);
-        }
-        this.RegisteredStateExitCallback = new Tuple<string, Action>("",callback);
-    }
 
     public void WaitForTrigger(Action callback)
     {
@@ -153,6 +118,34 @@ public abstract class Unit : MonoBehaviour, IStateChangeEventReceiver
         HeartText = HealingHeart?.GetComponentInChildren<StringMediator>();
         DamageText = DamageBubble?.GetComponentInChildren<StringMediator>();
     }
+
+    /// <summary>
+    /// This is a utility function that is used to call a callback when a state is returned to.
+    /// The fuction sets a trigger (presumably to leave the current state). Intended for use with some kind of looping state behavior.!--
+    /// Do not use this function if you do not think the current state will be returned to.
+    /// </summary>
+    /// <param name="triggerName"> The trigger to set</param>
+    /// <param name="callback">The callback to trigger upon re-entry</param>
+    public void SetTriggerAndTriggerCallbackOnReenter(string triggerName,Action callback){
+
+        StartCoroutine(WaitForStateReturn(triggerName,callback));
+    }
+
+    private IEnumerator WaitForStateReturn(string triggerName,Action callback){
+        int startingStateHash = Animator.GetCurrentAnimatorStateInfo(0).fullPathHash;
+        bool hasLeftState = false;
+        Animator.SetTrigger(triggerName);
+        while(hasLeftState == false || Animator.GetCurrentAnimatorStateInfo(0).fullPathHash != startingStateHash){
+            hasLeftState = hasLeftState || Animator.GetCurrentAnimatorStateInfo(0).fullPathHash != startingStateHash;
+            yield return null;
+        }
+        callback();
+
+
+
+
+    }
+
 
     public abstract void BeginTurn();
 
