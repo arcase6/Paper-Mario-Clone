@@ -15,7 +15,13 @@ MonoBehaviour:
   Icon: {fileID: 21300000, guid: ed51814ba1b7df34e8c6c86878b0ebc9, type: 3}
   AttackCostType: 1
   AttackCost: 1
+  SetInactive: 0
   TargetType: 1
   BuffType: 0
   BuffAmmount: 5
+  AnimationRemappings: []
   ActivationLocationName: Forward
+  startDelay: 0.1
+  PrefabToSpawn: {fileID: 0}
+  PrefabOffset: {x: 0, y: 0, z: 0}
+  EffectApplicationDelay: 2

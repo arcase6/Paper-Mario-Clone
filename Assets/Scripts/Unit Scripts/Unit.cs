@@ -285,24 +285,25 @@ public abstract class Unit : MonoBehaviour
 
     }
 
-    private System.Action ApplyItemCallback;
 
-    public void UseItem(List<AnimationRemapping> remappings, System.Action applyItemCallback)
+    public void UseItem(List<AnimationRemapping> remappings, System.Action applyItemCallback, float delayToApply)
     {
         foreach (AnimationRemapping animRemap in remappings)
         {
             this.animationClipOverrides[animRemap.OriginalName] = animRemap.ReplacementClip;
         }
         this.overrideController.ApplyOverrides(this.animationClipOverrides);
-        this.ApplyItemCallback = applyItemCallback; // triggered by event (for flexibility)
+        
         SetAnimatorTrigger("Use Item", 0);
+        if(delayToApply == 0)
+            applyItemCallback();
+        else
+            StartCoroutine(CallAfterDelay(applyItemCallback,delayToApply));
     }
 
-    //Where the item effect is actually activated
-    //This method MUST be called in the timeline to trigger
-    public void ApplyItemEffect()
-    {
-        this.ApplyItemCallback();
+    public IEnumerator CallAfterDelay(System.Action callback, float delay){
+        yield return new WaitForSeconds(delay);
+        callback();
     }
 
     public void SetAnimatorTrigger(string triggerName, float timeDelay)

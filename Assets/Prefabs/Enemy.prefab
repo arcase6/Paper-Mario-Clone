@@ -451,6 +451,8 @@ GameObject:
   - component: {fileID: 3612653621934056663}
   - component: {fileID: 1369540300120387204}
   - component: {fileID: 7178337093002177214}
+  - component: {fileID: 2461961107718176621}
+  - component: {fileID: 1504627069485862009}
   m_Layer: 10
   m_Name: Enemy
   m_TagString: Untagged
@@ -551,6 +553,30 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   unit: {fileID: 4195510541600776422}
   orientation: 0
+--- !u!114 &2461961107718176621
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1916150485268881805}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cfacbcb75954b9e41a82e505cf7216f9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  DieDelaySeconds: 1.2
+--- !u!210 &1504627069485862009
+SortingGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1916150485268881805}
+  m_Enabled: 1
+  m_SortingLayerID: 895555473
+  m_SortingLayer: 1
+  m_SortingOrder: 0
 --- !u!1 &3861393807203449487
 GameObject:
   m_ObjectHideFlags: 0
@@ -638,8 +664,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4231991042015995913}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.67, y: 0, z: -0.24000072}
-  m_LocalScale: {x: -1, y: 1, z: 1}
+  m_LocalPosition: {x: -0.67, y: 0, z: -0.24000072}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1133208522042478333}
   m_Father: {fileID: 1916150485268881801}
@@ -760,8 +786,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d69b51b418e2eed43af0458a8107457d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PrefabToSpawn: {fileID: 0}
-  EffectOffset: {x: 0, y: 0, z: 0}
+  ParentItem: {fileID: 0}
 --- !u!1 &7522898259432285129
 GameObject:
   m_ObjectHideFlags: 0
@@ -930,7 +955,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1133208522042478333}
   - component: {fileID: 594690736665822197}
-  - component: {fileID: 4498607614363995292}
+  - component: {fileID: 6076638135117726034}
   m_Layer: 10
   m_Name: Damage Bubble
   m_TagString: Untagged
@@ -1004,7 +1029,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!95 &4498607614363995292
+--- !u!95 &6076638135117726034
 Animator:
   serializedVersion: 3
   m_ObjectHideFlags: 0
@@ -1014,7 +1039,7 @@ Animator:
   m_GameObject: {fileID: 8699992663965390385}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 4b70c42af34b23c4fa25f0bb387ed51f, type: 2}
+  m_Controller: {fileID: 22100000, guid: 271b2fbfa45022f44a1748a32599c40a, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0

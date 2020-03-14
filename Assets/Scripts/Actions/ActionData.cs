@@ -22,7 +22,8 @@ public abstract class ActionData : ScriptableObject {
     public Sprite Icon;
     public CostType AttackCostType;
     public int AttackCost;
-
+    [Tooltip("Used to turn off actions that cannot be used manually. This is made for things like cutscenes and also to turn off bad items during development")]
+    public bool SetInactive = false;
     public TargetType TargetType = TargetType.Ally;
 
     public string CostDisplay{
@@ -39,6 +40,8 @@ public abstract class ActionData : ScriptableObject {
 
     public virtual bool CanPerformAction(Unit ActingUnit){
         Player player;
+        if(SetInactive)
+            return false;
         switch(this.AttackCostType){
             case CostType.FP:
                 player = ActingUnit as Player;

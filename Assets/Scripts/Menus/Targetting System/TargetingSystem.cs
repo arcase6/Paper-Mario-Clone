@@ -53,7 +53,7 @@ public class TargetingSystem : Menu
             return new Unit[]{StageDirector.Units[SelectedUnitIndex]};
         }
         else{
-            return StageDirector.Units.ToArray();
+            return StageDirector.Units.Where(u => u != null).ToArray();
         }
     }
 

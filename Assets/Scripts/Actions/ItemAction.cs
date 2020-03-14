@@ -33,9 +33,16 @@ public class ItemAction : ActionData
     public List<AnimationRemapping> AnimationRemappings;
     public string ActivationLocationName = "Forward"; //kept generic on purpose -- to-do change to enum to avoid errors
     
+    [Tooltip("A delay to apply before the item is used. Delay starts after animation begins.")]
+    public float startDelay = .1f;
+    
+
     [Tooltip("An optional prefab to spawn. Not necessary for all items. The prefab should call the ApplyItemEffect method a second time. The normal animation will spawn the prefab not use the item when called first.")]
     public GameObject PrefabToSpawn;
+    [Tooltip("How much to offset the prefab by")]
     public Vector3 PrefabOffset;
+    [Tooltip("When to apply the item effect. This works on a delay so that animations can be played. Only used when a prefab is spawned")]
+    public float EffectApplicationDelay = 2f;
 
     //entry point from the system action - Unit has not moved or done anything
     public override void PerformAction(Unit ActingUnit, Unit[] TargetUnits)
@@ -48,24 +55,32 @@ public class ItemAction : ActionData
     //Unit is in position and ready to play item animations
     public void PlayItemAnimations(Unit actingUnit, Unit[] targetUnits)
     {
-        actingUnit.UseItem(this.AnimationRemappings, () => ApplyItemEffect(actingUnit, targetUnits));
+        actingUnit.UseItem(this.AnimationRemappings, () => ApplyItemEffect(actingUnit, targetUnits), this.startDelay);
     }
 
 
 
-    //unit is playing item animations and an even has triggered asking for item effect to be carried out
+    //unit is playing item animations and an event has triggered asking for item effect to be carried out
     //when extending this is the only thing that will need to be changed except for possible animations
     public virtual void ApplyItemEffect(Unit actingUnit, Unit[] targetUnits)
     {
-        if(PrefabToSpawn && !actingUnit.EffectSpawner.enabled){
-            actingUnit.EffectSpawner.PrefabToSpawn = this.PrefabToSpawn;
-            actingUnit.EffectSpawner.EffectOffset = PrefabOffset;
+        if (PrefabToSpawn && !actingUnit.EffectSpawner.enabled)
+        {
+            actingUnit.EffectSpawner.ParentItem = this;
             actingUnit.EffectSpawner.enabled = true;
-            return;
+            actingUnit.EffectSpawner.ItemApplyCallback = () => ApplyItemEffectInternal(actingUnit,targetUnits);
+            //return;
         }
+        else{
+            ApplyItemEffectInternal(actingUnit, targetUnits);
+        }
+    }
 
-        if(actingUnit.UnitType == UnitType.Ally && targetUnits.First().UnitType != UnitType.Ally){
-            targetUnits.First().GetComponentInParent<StageDirector>().ApplyDamageToAllUnits(this.BuffAmmount, false,targetUnits.ToList());
+    private void ApplyItemEffectInternal(Unit actingUnit, Unit[] targetUnits)
+    {
+        if (actingUnit.UnitType == UnitType.Ally && targetUnits.First().UnitType != UnitType.Ally)
+        {
+            targetUnits.First().GetComponentInParent<StageDirector>().ApplyDamageToAllUnits(this.BuffAmmount, false, targetUnits.ToList());
         }
         else
         {

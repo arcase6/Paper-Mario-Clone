@@ -209,6 +209,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: Goombella
       objectReference: {fileID: 0}
+    - target: {fileID: 3185702862273641554, guid: 3f4c4e120c6834949bb54f78bfb49f1c,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3730071091663978748, guid: 3f4c4e120c6834949bb54f78bfb49f1c,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.78
+      objectReference: {fileID: 0}
     - target: {fileID: 3849009430729671206, guid: 3f4c4e120c6834949bb54f78bfb49f1c,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -288,6 +298,26 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Controller
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 6716340407700604428, guid: 3f4c4e120c6834949bb54f78bfb49f1c,
+        type: 3}
+      propertyPath: m_textInfo.characterCount
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6716340407700604428, guid: 3f4c4e120c6834949bb54f78bfb49f1c,
+        type: 3}
+      propertyPath: m_textInfo.wordCount
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6716340407700604428, guid: 3f4c4e120c6834949bb54f78bfb49f1c,
+        type: 3}
+      propertyPath: m_textInfo.lineCount
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6716340407700604428, guid: 3f4c4e120c6834949bb54f78bfb49f1c,
+        type: 3}
+      propertyPath: m_textInfo.pageCount
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8146323494502901436, guid: 3f4c4e120c6834949bb54f78bfb49f1c,
         type: 3}

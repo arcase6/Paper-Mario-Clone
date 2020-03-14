@@ -5,6 +5,9 @@ using UnityEngine;
 
 //A class that keeps track of important positions and units inside
 
+//TO-DO: This class is not really necessary. It should not exists if refactored.
+
+
 //Responsibilities:
 
 //Keep track of positions

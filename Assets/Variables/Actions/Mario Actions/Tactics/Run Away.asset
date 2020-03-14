@@ -15,4 +15,5 @@ MonoBehaviour:
   Icon: {fileID: 21300000, guid: e5c05199702edc24a9067e25799956dc, type: 3}
   AttackCostType: 0
   AttackCost: 0
+  SetInactive: 1
   TargetType: 1024

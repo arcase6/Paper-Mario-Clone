@@ -21,9 +21,10 @@ public class TargetingSysInput : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(CooldownAmountRemaining < 0){
+        if(CooldownAmountRemaining > 0){
             CooldownAmountRemaining -= Time.deltaTime;
             CooldownAmountRemaining = Mathf.Max(CooldownAmountRemaining, 0f);
+            return;
         }
 
         if (Input.GetButtonDown("Submit"))

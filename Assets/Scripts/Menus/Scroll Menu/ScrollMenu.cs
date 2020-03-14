@@ -116,6 +116,8 @@ public class ScrollMenu : MonoBehaviour
         {
             SelectPressed = CancelPressed = false;
             ActionData selectedAction = this.AvailableActions.List[SelectedIndex];
+            if(!selectedAction.CanPerformAction(ActingUnit.Value))
+                return; // do no perform actions that cannot be done
             if (selectedAction.TargetType != TargetType.Targetless)
                 ActivateTargettingSystem();
             else{
