@@ -70,7 +70,7 @@ public class TargetingSystem : Menu
             //make sure active
             Transform pointer = PointerPool.GetChild(0);
             pointer.gameObject.SetActive(true);
-            pointer.position = ValidTargets[SelectedUnitIndex].transform.position; 
+            pointer.position = ValidTargets[SelectedUnitIndex].HeadPosition.transform.position; 
         }
         else{ //multiple targets
             for(int i = 0; i < ValidTargets.Length; i++){
