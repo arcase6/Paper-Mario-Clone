@@ -5,7 +5,8 @@ using System.Linq;
 using System.Threading.Tasks;
 using UnityEngine;
 
-public enum TurnStatus{
+public enum TurnStatus
+{
     StartPlayerTurn = 0,
     StartEnemyTurn = 1,
     PlayerFirstStrike = 2,
@@ -19,24 +20,26 @@ public class TurnManager : MonoBehaviour
     public StageDirector EnemyDirector;
 
 
-    public List<Unit> Players{
-        get{return this.PlayerSet.Set.Units;}
+    public List<Unit> Players
+    {
+        get { return this.PlayerSetHolder.Set.Units; }
     }
 
-    public List<Unit> Enemies{
-        get{return this.EnemySet.Set.Units;}
+    public List<Unit> Enemies
+    {
+        get { return this.EnemySet.Set.Units; }
     }
 
-    public UnitSetHolder PlayerSet;
+    public UnitSetHolder PlayerSetHolder;
     public UnitSetHolder EnemySet;
     [Tooltip("Used when entering combat. Used to setup things like first strikes")]
     public IntVariable TurnStatusStartingValue;
 
     public float EnemyStartTurnDelay = .5f;
     public TurnStatus BattleEncounterType;
-    
+
     public MenuRouter MenuRouter;
-    
+
     [HideInInspector]
     public RotatorMenu RotatorMenu;
 
@@ -44,7 +47,7 @@ public class TurnManager : MonoBehaviour
 
     private Player originalStartingPlayer = null;
 
-    
+
 
     // Start is called before the first frame update
     void Start()
@@ -52,7 +55,7 @@ public class TurnManager : MonoBehaviour
         this.RotatorMenu = MenuRouter.EnabledMenus["Player Rotator Menu"] as RotatorMenu;
         if (TurnStatusStartingValue)
             BattleEncounterType = (TurnStatus)TurnStatusStartingValue.Value;
-        Invoke("StartBattleEncounter",.2f);
+        Invoke("StartBattleEncounter", .2f);
     }
 
     /// <summary>
@@ -78,44 +81,52 @@ public class TurnManager : MonoBehaviour
 
     public void StartPlayerTurn()
     {
+        foreach (Unit unit in this.PlayerSetHolder.Set.Units)
+        {
+            if (unit.HP > 0)
+                unit.CanAct = true;
+        }
         SetStartingPlayerUnit();
         Player startingPlayer = ActingUnit.Value as Player;
-        foreach(Unit p in Players)p.CanAct = true;
+        foreach (Unit p in Players) p.CanAct = true;
         RotatorMenu.DynamicallyLoadedActions = startingPlayer.MenuActions;
-        RotatorMenu.ShowDialogue(); 
+        RotatorMenu.ShowDialogue();
         startingPlayer.BeginTurn();
     }
 
-   
+
 
     private void SetStartingPlayerUnit()
     {
-        List<Unit> players = this.PlayerSet.Set.Units;
+        List<Unit> players = this.PlayerSetHolder.Set.Units;
         players.Sort((u1, u2) => (int)((u2.transform.position.x - u1.transform.position.x) * 100));
 
         Player startingPlayer = players.Where(p => p.CanAct).First() as Player;
         this.ActingUnit.Value = startingPlayer;
     }
 
-    public async void StartEnemyTurn(){
+    public async void StartEnemyTurn()
+    {
         Debug.Log("The enemy turn was started");
-        foreach(Unit enemy in Enemies)enemy.CanAct = true;
+        foreach (Unit enemy in Enemies) enemy.CanAct = true;
         
         await Task.Delay(TimeSpan.FromSeconds(EnemyStartTurnDelay));
         DoNextEnemyTurn(null);
-        
+
     }
 
-    public void DoNextEnemyTurn(Unit enemyThatJustWent){
-        if(enemyThatJustWent)
+    public void DoNextEnemyTurn(Unit enemyThatJustWent)
+    {
+        if (enemyThatJustWent)
             enemyThatJustWent.CanAct = false;
 
         Unit playerUnit = Players.First();
         Vector3 playerPos = playerUnit.transform.position;
         Enemy nextEnemy = Enemies.OrderBy(enemy => (enemy.transform.position - playerPos).sqrMagnitude).Where(enemy => enemy.CanAct).FirstOrDefault() as Enemy;
-        if(nextEnemy)
+        if (nextEnemy)
             nextEnemy.BeginTurn();
-        else{
+        else
+        {
             //all enemies have gone - so start player turn
             StartPlayerTurn();
         }
@@ -124,23 +135,27 @@ public class TurnManager : MonoBehaviour
 
 
     //Should be called whenever a Player Unit move ends using Unit Set Holder's Unity Event
-    public void PlayerUnitMoveEndHandler(Unit unit){
+    public void PlayerUnitMoveEndHandler(Unit unit)
+    {
         Player player = unit as Player;
         player.CanAct = false;
 
-        if(player.IsPartnerAbleToAct()  || (preservePlayerOrder && player != this.originalStartingPlayer)){
+        if (player.IsPartnerAbleToAct() || (preservePlayerOrder && player != this.originalStartingPlayer))
+        {
             player.SwapUnitOrder(RotatorMenu); //(there is a callback at the end of swap order that will end the turn if necessary)
         }
-        else{
+        else
+        {
             StartEnemyTurn();
         }
     }
 
-    
+
 
 
     //Should be called whenever a EnemyUnit move ends using Unit Set Holder's Unity Event
-    public void EnemyUnitMoveEndHandler(Unit unit){
+    public void EnemyUnitMoveEndHandler(Unit unit)
+    {
 
     }
 }

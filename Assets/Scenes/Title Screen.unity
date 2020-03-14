@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 1
+  m_UseShadowmask: 0
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -635,7 +635,7 @@ MonoBehaviour:
   m_enableWordWrapping: 1
   m_wordWrappingRatios: 0.4
   m_overflowMode: 0
-  m_firstOverflowCharacterIndex: 0
+  m_firstOverflowCharacterIndex: 6
   m_linkedTextComponent: {fileID: 0}
   m_isLinkedTextComponent: 0
   m_isTextTruncated: 0
@@ -664,7 +664,7 @@ MonoBehaviour:
     spaceCount: 3
     wordCount: 3
     linkCount: 0
-    lineCount: 2
+    lineCount: 3
     pageCount: 1
     materialCount: 1
   m_isUsingLegacyAnimationComponent: 0
@@ -1278,11 +1278,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 506ab0848ed80154e819677845b5d888, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MainPanel: {fileID: 0}
-  AboutPanel: {fileID: 0}
-  MarioStats: {fileID: 0}
-  GoombellaStats: {fileID: 0}
-  SharedData: {fileID: 0}
+  MainPanel: {fileID: 354631305}
+  AboutPanel: {fileID: 393579180}
+  MarioStats: {fileID: 11400000, guid: 38c8b03edbd778f498b226229249678c, type: 2}
+  GoombellaStats: {fileID: 11400000, guid: 6762660be3da2d44d8c2fb6ef5415bc7, type: 2}
+  SharedData: {fileID: 11400000, guid: 810a88c7af7fede4dbcfabb64d1e89d2, type: 2}
   GoombellaStartingHP: 8
   MarioStartingHP: 12
   StartingFP: 5
